@@ -1,3 +1,5 @@
+package algorithms.stack;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
@@ -41,7 +43,13 @@ public class ShuntingYard {
     Arrays.stream((new BufferedReader(new InputStreamReader(System.in)))
         .readLine()
         .split(" "))
-        .forEach(ShuntingYard::performAction);
+        .forEach(token -> {
+          performAction(token);
+          System.out.println("operands --> "+operands);
+          System.out.println("operators --> "+operators);
+              System.out.println();
+        }
+        );
     calculateSubExpression();
     System.out.println(operands.pop());
   }
@@ -72,7 +80,9 @@ public class ShuntingYard {
     if (")".equals(operator)) {
       calculateSubExpression();
     } else {
-      if (!operators.peek().equals("(") && operatorPriority.get(operators.peek()) >= operatorPriority.get(operator)) {
+      while (!operators.empty() &&
+          !operators.peek().equals("(") &&
+          operatorPriority.get(operators.peek()) >= operatorPriority.get(operator)) {
         popAndCalculate(operators.pop());
       }
       operators.push(operator);
