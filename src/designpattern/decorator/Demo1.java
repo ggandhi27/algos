@@ -43,6 +43,7 @@ class GlowingShape<T extends BuildShape> implements BuildShape {
   @Override
   public void build() {
     t.build();
+    System.out.println(glow);
   }
 }
 
@@ -50,5 +51,6 @@ public class Demo1 {
 
   public static void main(String[] args) {
     GlowingShape<Square> glowingSquare = new GlowingShape<>(new Square(10), 5);
+    glowingSquare.build();
   }
 }

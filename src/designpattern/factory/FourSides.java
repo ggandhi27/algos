@@ -12,17 +12,18 @@ public class FourSides {
 
   static class FourSidesFactory {
 
-    public static FourSides getSquare(Double xDouble, Double yDouble) {
-      return new FourSides(xDouble, xDouble);
+    public static FourSides getCartesian(Double xDouble, Double yDouble) {
+      return new FourSides(xDouble, yDouble);
     }
 
-    public static FourSides getRectangle(Double xDouble, Double yDouble) {
-      return new FourSides(xDouble, yDouble);
+    public static FourSides getPolar(Double xDouble, Double yDouble) {
+      return new FourSides(2 * xDouble, 2 * yDouble);
     }
   }
 
   public static void main(String[] args) {
 
-    FourSides fourSides1 = FourSides.FourSidesFactory.getRectangle(3.4, 4.4);
+    FourSides fourSides1 = FourSides.FourSidesFactory.getPolar(3.4, 4.4);
+    FourSides fourSides2 = FourSides.FourSidesFactory.getCartesian(3.2, 1.2);
   }
 }

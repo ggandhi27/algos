@@ -2,7 +2,7 @@ package designpattern.proxy;
 
 interface Drivable {
 
-  public void drive();
+  void drive();
 }
 
 class Driver {

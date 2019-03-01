@@ -1,4 +1,4 @@
-package designpattern.solid.builder;
+package designpattern.builder;
 
 class Address3 {
 

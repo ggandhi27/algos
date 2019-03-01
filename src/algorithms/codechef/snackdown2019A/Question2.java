@@ -1,4 +1,4 @@
-package algorithms.codechef.snackdown2019;
+package algorithms.codechef.snackdown2019A;
 
 import java.io.BufferedReader;
 import java.io.IOException;

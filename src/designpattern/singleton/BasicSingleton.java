@@ -19,6 +19,7 @@ public class BasicSingleton implements Serializable
   {
     return value;
   }
+
   public void setValue(int value)
   {
     this.value = value;
@@ -74,7 +75,6 @@ class BasicSingletonDemo
     BasicSingleton singleton2 = readFromFile(filename);
 
     System.out.println(singleton == singleton2);
-
     System.out.println(singleton.getValue());
     System.out.println(singleton2.getValue());
   }

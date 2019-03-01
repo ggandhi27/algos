@@ -48,6 +48,7 @@ public class MyExecutor {
     Stock2 stock2 = new Stock2(reentrantLock);
     Random random = new Random();
     Executor executor = Executors.newFixedThreadPool(3);
+//    ((ExecutorService) executor).submit(() -> );
     executor.execute(() -> {
       while (true) {
         stock2.addToStock();
