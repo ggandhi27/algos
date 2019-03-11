@@ -50,5 +50,31 @@
         </constructor-arg>
     </bean>
 
+    <bean id="ans1" class="com.employee.Answer">
+        <constructor-arg  value="1" name="id"/>
+        <constructor-arg  value="gaurav" name="by"/>
+        <constructor-arg  value="hello" name="name"/>
+    </bean>
+    <bean id="ans2" class="com.employee.Answer">
+        <constructor-arg  value="3" name="id"/>
+        <constructor-arg  value="gaurav" name="by"/>
+        <constructor-arg  value="hello1" name="name"/>
+    </bean>
+    <bean id="ans3" class="com.employee.Answer">
+        <constructor-arg  value="2" name="id"/>
+        <constructor-arg  value="gaurav" name="by"/>
+        <constructor-arg  value="hello2" name="name"/>
+    </bean>
 
+    <bean name="ques2" class="com.employee.Question2">
+        <constructor-arg value="2" name="id"/>
+        <constructor-arg value="How do you do?" name="name"/>
+        <constructor-arg name="answerList">
+            <list>
+                <ref bean="ans1"></ref>
+                <ref bean="ans2"></ref>
+                <ref bean="ans3"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
 </beans>
