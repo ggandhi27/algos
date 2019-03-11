@@ -29,9 +29,26 @@
         <constructor-arg  value="India" name="country"/>
     </bean>
 
-    <bean id="employee4" class="com.employee.Employee">
+    <bean id="employee4" class="com.employee.Employee" autowire="byName">
         <constructor-arg name="address" > <ref bean="address"></ref></constructor-arg>
         <constructor-arg name="id" value="14"></constructor-arg>
         <constructor-arg name="name" value="Gaurav"></constructor-arg>
     </bean>
+
+    <bean id="ques" class="com.employee.Question" autowire="byType">
+
+        <constructor-arg value="52"/>
+        <constructor-arg value="This is a question"/>
+        <constructor-arg >
+            <list>
+                <value>Answer 1</value>
+                <value>Answer 2</value>
+                <value>Answer 3</value>
+                <value>Answer 4</value>
+                <value>Answer 5</value>
+            </list>
+        </constructor-arg>
+    </bean>
+
+
 </beans>
